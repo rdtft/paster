@@ -1,0 +1,8 @@
+<h1>Last pastes:</h1>
+
+{{#pastes}}
+  <p><a href="/{{.}}"> {{.}} </a></p>
+{{/pastes}}
+{{^pastes}}
+  <a href="/new">add one</a>
+{{/pastes}}

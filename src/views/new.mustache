@@ -1,0 +1,24 @@
+<form action='/create' method='post'>
+  <label>Private:</label>
+  <input type='checkbox' name='private' />
+
+  <label>Language:</label>
+  <select name='lang'>
+    <option value='Common lisp'>Common lisp</option>
+    <option value='Ruby'>Ruby</option>
+    <option value='Standard ML'>Standard ML</option>
+    <option value='C'>C</option>
+    <option value='Shell'>Shell</option>
+    <option value='Text'>Text</option>
+  </select>
+
+  <textarea name='paste' cols='80' rows='20'></textarea>
+
+  </br>
+
+  {{#errors}}
+    <div class="error">{{error}}</div>
+  {{/errors}}
+
+  <input name='commit' type='submit' value='Paste' />
+</form>

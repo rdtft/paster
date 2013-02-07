@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Paster</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+      body {
+        font-family: 'PT Serif', serif;
+      }
+
+      .label {
+        text-align: right;
+        vertical-align: top;
+        width: 1%
+      }
+
+      pre {
+        padding: 0.5em;
+        overflow: auto;
+        overflow-y: visible;
+        width: 600px;
+      }
+
+      code {
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 14px;
+        line-height: 18px;
+        white-space: pre;
+      }
+
+      .content {
+        background: #eee;
+        border: 2px solid #ccc;
+        width: 700px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      a {
+        color: #000
+      }
+
+      a:visited {
+        color: #000
+      }
+
+      #body {
+        width: 700px;
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -6em;
+      }
+
+      #header {
+        font-size: 24px;
+        text-align: center;
+        padding: 0em 0em 2em 0em;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="body">
+      <div id="header">
+        <a href="/new">new paste</a>
+      </div>
+      {{&body}}
+    </div>
+  </body>
+</html>
