@@ -8,7 +8,7 @@ You can see demo [here](http://paster-1984.herokuapp.com)
     CL-USER> (ql:quickload :paster)
     CL-USER> (paster:paster-start)
 
-### What libraries I used
+### What libraries are used
 
 * [quicklisp](http://www.quicklisp.org)
 * [hunchentoot](http://weitz.de/hunchentoot)

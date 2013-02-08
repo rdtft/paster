@@ -8,7 +8,7 @@
 
 (defun index ()
   (if (file-exists-p #P"pastes/public")
-      (render :index `((:pastes ,@(read-file-into-list "pastes/public"))))
+      (render :index `((:pastes ,@(reverse (read-file-into-list "pastes/public")))))
       (render :index)))
 
 (defun new ()
