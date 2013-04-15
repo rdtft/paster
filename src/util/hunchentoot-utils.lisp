@@ -4,7 +4,7 @@
 
 (defun paster-start ()
     (setf *ht-server*
-	  (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 5000))))
+          (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 5000))))
 
 (defun paster-stop ()
   (progn
