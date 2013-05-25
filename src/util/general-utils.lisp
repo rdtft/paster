@@ -17,6 +17,10 @@
          (template-body (mustache-render-to-string template params)))
     (mustache-render-to-string layout `((:body . ,template-body)))))
 
+(defun render-raw (data)
+  (setf (hunchentoot:content-type*) "text/plain;charset=utf-8")
+  data)
+
 (defun sha1-string-to-file (s)
   (let* ((dir (subseq s 0 2))
          (name (subseq s 2 40)))

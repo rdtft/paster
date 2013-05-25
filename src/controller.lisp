@@ -4,6 +4,7 @@
       (list (hunchentoot:create-regex-dispatcher "^/$" 'index)
             (hunchentoot:create-regex-dispatcher "^/new$" 'new)
             (hunchentoot:create-regex-dispatcher "^/create$" 'create)
+            (hunchentoot:create-regex-dispatcher "^/[a-fA-F0-9]{40}/raw$" (lambda () (show :raw t)))
             (hunchentoot:create-regex-dispatcher "^/[a-fA-F0-9]{40}$" 'show)))
 
 (defun index ()
@@ -14,11 +15,14 @@
 (defun new ()
   (render :new))
 
-(defun show ()
+(defun show (&key (raw nil))
   (let ((sha1-file (sha1-string-to-file (subseq (request-uri*) 1 41))))
-    (if (file-exists-p sha1-file)
-        (render :show (read-from-string (read-file-into-string sha1-file :external-format :utf-8)))
-        (return-404))))
+    (unless (file-exists-p sha1-file)
+      (return-404))
+    (let ((data (read-from-string (read-file-into-string sha1-file :external-format :utf-8))))
+      (if raw
+          (render-raw (cdr (assoc :body data)))
+          (render :show data)))))
 
 (defun create ()
   (let ((private (post-parameter "private"))
