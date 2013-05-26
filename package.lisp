@@ -7,5 +7,5 @@
   (:import-from #:cl-fad
                 #:file-exists-p
                 #:pathname-as-file)
-  (:export #:paster-start
-           #:paster-stop))
+  (:export #:start-http-server
+           #:stop-http-server))
