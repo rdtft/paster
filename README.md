@@ -6,7 +6,7 @@ You can see demo [here](http://paster-1984.herokuapp.com)
 ### Quick Start
 
     CL-USER> (ql:quickload :paster)
-    CL-USER> (paster:paster-start)
+    CL-USER> (paster:start-http-server)
 
 ### What libraries are used
 
